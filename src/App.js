@@ -1,9 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Home from './Components/Home';
 
 function App() {
   return (
-    <h1 class="App">Welcome the first session of React</h1>
+    <div class="App">
+      <Home/>
+      <About/>
+      <Contact />
+    </div>
   );
 }
 
