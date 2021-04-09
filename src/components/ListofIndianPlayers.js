@@ -5,7 +5,7 @@ function ListofIndianPlayers(props) {
   return(
     props.indianPlayers.map((item, index) => {
       {console.log(item)}
-        <li>{item}</li>
+        return(<li>{item}</li>)
     })
   )  
 } 

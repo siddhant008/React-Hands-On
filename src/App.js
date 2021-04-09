@@ -53,7 +53,7 @@ function App() {
  const IndianPlayers = [...T20Players, ...RanjiTrophyPlayers]
 
   return (
-    <div>
+    <div className="App">
       <h3>List of Players</h3>
       <ListofPlayers players={players} />
       <h3>List of Players having score less than 70</h3>
