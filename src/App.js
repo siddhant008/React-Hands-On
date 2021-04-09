@@ -1,15 +1,15 @@
 import './App.css';
 
-import About from './Components/About';
-import Contact from './Components/Contact';
-import Home from './Components/Home';
+import {CalculateScore} from './Components/CalculateScore';
 
 function App() {
   return (
     <div class="App">
-      <Home/>
-      <About/>
-      <Contact />
+      <CalculateScore Name={"Steeve"}
+        School={"DNV Public School"}
+        total={284}
+        goal={3}
+        />
     </div>
   );
 }
