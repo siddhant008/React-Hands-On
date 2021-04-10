@@ -1,77 +1,98 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-import  ListofPlayers from "./components/ListofPlayers";
-import  ScoreLessthan70 from "./components/ScoreLessthan70";
-import  OddPlayers from "./components/OddPlayers";
-import EvenPlayers from './components/EvenPlayers';
-import ListofIndianPlayers from './components/ListofIndianPlayers';
+import ListofPlayers from "./components/ListofPlayers";
+import ScoreBelow70 from "./components/ScoreBelow70";
+import OddPlayers from "./components/OddPlayers";
+import EvenPlayers from "./components/EvenPlayers";
+import ListofIndianPlayers from "./components/ListofIndianPlayers";
 // import  IndianPlayers from "./components/IndianPlayers";
-
 
 function App() {
   const players = [
     {
-      name: "sid",
-      score: 99,
+      name: "Jack",
+      score: 50,
     },
     {
-      name: "nam",
-      score: 999,
+      name: "Michael",
+      score: 70,
     },
     {
-      name: "si",
-      score: 9,
+      name: "John",
+      score: 40,
     },
     {
-      name: "na",
-      score: 99,
+      name: "Ann",
+      score: 61,
     },
     {
-      name: "s",
-      score: 0,
+      name: "Elizabeth",
+      score: 61,
     },
     {
-      name: "n",
-      score: 9999,
+      name: "Sachin",
+      score: 95,
     },
     {
-      name: "cat",
-      score: 19,
+      name: "Dhoni",
+      score: 100,
     },
     {
-      name: "pam",
-      score: 12,
+      name: "Virat",
+      score: 84,
+    },
+    {
+      name: "Jadeja",
+      score: 64,
+    },
+    {
+      name: "Raina",
+      score: 75,
+    },
+    {
+      name: "Rohit",
+      score: 80,
     },
   ];
 
-  const IndianTeam = ['one', 'two', 'three', 'four', 'five', 'six']
+  const IndianTeam = [
+    "Sachin1",
+    "Dhoni2",
+    "Virat3",
+    "Rohit4",
+    "Yuvaraj5",
+    "Raina6",
+  ];
 
-  const T20Players=['First Player', 'Second Player', 'Thurd Players']
-  const RanjiTrophyPlayers = ['Fourth Player', 'fifth player', 'sixth player']
+  const T20Players = ["First Player", "Second Player", "Third Player"];
+  const RanjiTrophyPlayers = ["Fourth Player", "fifth player", "sixth player"];
 
- const IndianPlayers = [...T20Players, ...RanjiTrophyPlayers]
-
-  return (
-    <div className="App">
-      <h3>List of Players</h3>
-      <ListofPlayers players={players} />
-      <h3>List of Players having score less than 70</h3>
-      <ScoreLessthan70 players={players}/>
-
-      <div>
-        <h3>Indian Teams</h3>
-        <h4>Odd Players</h4>
+  const IndianPlayers = [...T20Players, ...RanjiTrophyPlayers];
+  var flag = true;
+  if (flag) {
+    return (
+      <div className="App">
+        <h1>List of Players</h1>
+        <ListofPlayers players={players} />
+        <h1>List of Players having score less than 70</h1>
+        <ScoreBelow70 players={players} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <h1>Odd Players</h1>
         {OddPlayers(IndianTeam)}
-        <h4>Even Players</h4>
+        <hr/>
+        <h1>Even Players</h1>
         {EvenPlayers(IndianTeam)}
         <hr />
-        <h3>List of Indian Player merged</h3>
+        <h1>List of Indian Player merged</h1>
         <ListofIndianPlayers indianPlayers={IndianPlayers} />
       </div>
-
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
