@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import ListofPlayers from "./components/ListofPlayers";
@@ -6,7 +5,6 @@ import ScoreBelow70 from "./components/ScoreBelow70";
 import OddPlayers from "./components/OddPlayers";
 import EvenPlayers from "./components/EvenPlayers";
 import ListofIndianPlayers from "./components/ListofIndianPlayers";
-// import  IndianPlayers from "./components/IndianPlayers";
 
 function App() {
   const players = [
@@ -69,7 +67,7 @@ function App() {
   const RanjiTrophyPlayers = ["Fourth Player", "fifth player", "sixth player"];
 
   const IndianPlayers = [...T20Players, ...RanjiTrophyPlayers];
-  var flag = true;
+  var flag = false;
   if (flag) {
     return (
       <div className="App">
