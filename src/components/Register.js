@@ -35,14 +35,15 @@ class Register extends Component {
 
   validateForm = () => {
     if (this.state.name.length < 5) {
-      this.setState({
-        ...this.state,
-        errors: {
-          ...this.state.errors,
-          fullName: "Full name must be 5 characters long!!"
-        },
-      });
-      console.log("name");
+      // this.setState({
+      //   ...this.state,
+      //   errors: {
+      //     ...this.state.errors,
+      //     fullName: "Full name must be 5 characters long!!"
+      //   },
+      // });
+      this.state.errors.fullName = "Full name must be 5 characters long!!";
+      // console.log("name");
       // console.log(this.state);
     } else {
       this.setState({
@@ -57,13 +58,14 @@ class Register extends Component {
 
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(this.state.email.toLowerCase())) {
-      this.setState({
-        ...this.state,
-        errors: {
-          ...this.state.errors,
-          email: "Email is not valid.",
-        },
-      });
+      // this.setState({
+      //   ...this.state,
+      //   errors: {
+      //     ...this.state.errors,
+      //     email: "Email is not valid.",
+      //   },
+      // });
+      this.state.errors.email = "Email is not valid.";
       console.log("mail");
     } else {
       this.setState({
@@ -76,13 +78,14 @@ class Register extends Component {
     }
 
     if (this.state.password.length < 7) {
-      this.setState({
-        ...this.state,
-        errors: {
-          ...this.state.errors,
-          password: "Password must be 8 characters long.",
-        },
-      });
+      // this.setState({
+      //   ...this.state,
+      //   errors: {
+      //     ...this.state.errors,
+      //     password: "Password must be 8 characters long.",
+      //   },
+      // });
+      this.state.errors.password = "Password must be 8 characters long.";
       console.log("password");
     } else {
       this.setState({
@@ -112,6 +115,11 @@ class Register extends Component {
       if (this.state.errors.fullName !== "") alert(this.state.errors.fullName);
       if (this.state.errors.email !== "") alert(this.state.errors.email);
       if (this.state.errors.password !== "") alert(this.state.errors.password);
+      this.setState({errors: {
+        fullName: "",
+        email: "",
+        password: "",
+      }})
       // if(this.state.name.length >0 && this.state.email.includes('@') && this.state.email.includes('.') && this.state.password.length>7) {
       //     alert("Thanks ");
       // }
